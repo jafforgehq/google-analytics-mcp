@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "seo-analytics-mcp"
+version = "0.1.0"
+description = "MCP server for Google Search Console + GA4 analytics and action generation"
+readme = "README.md"
+requires-python = ">=3.11"
+authors = [{ name = "Codex" }]
+dependencies = [
+  "mcp>=1.2.0",
+  "python-dotenv>=1.0.1",
+  "google-auth>=2.35.0",
+  "google-api-python-client>=2.151.0",
+  "google-analytics-data>=0.18.16",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.3.0",
+  "ruff>=0.7.0",
+]
+
+[project.scripts]
+seo-analytics-mcp = "seo_analytics_mcp.server:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]

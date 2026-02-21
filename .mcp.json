@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "seo-analytics": {
+      "type": "stdio",
+      "command": "/Users/fhadziselimovic/Documents/dev/analytics/run-local.sh",
+      "args": [],
+      "env": {}
+    }
+  }
+}
